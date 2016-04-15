@@ -1,6 +1,6 @@
 type project
 title
-    ##ProjectName##
+    Angara.Table
 owners
     Microsoft Research
 authors 
@@ -16,10 +16,10 @@ requireLicenseAcceptance
 copyright
     Copyright 2016
 tags
-    table csv
+    table csv .net f#
 summary
     A .NET library to work with tables.
 description
-    A library that contains types for table representation and operations to manipulate with tables as well as save and load them from text files such as CSV files.
+    Angara.Table is a .NET library that provides types representing plain tables. It allows loading and saving tables and facilitates operations on tables.
 
 
