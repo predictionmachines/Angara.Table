@@ -36,7 +36,7 @@ let summary = "A .NET library to work with plain tables."
 
 // Longer description of the project
 // (used as a description for NuGet package; line breaks are automatically cleaned up)
-let description = "Angara.Table is a .NET library that provides types representing plain tables. It allows loading and savings tables and facilitates operations on tables."
+let description = "Angara.Table is a .NET library that provides types representing plain tables. It allows loading and saving tables and facilitates operations on tables."
 
 // List of author names (for NuGet package)
 let authors = [ "Microsoft Research"; "MSU ITIS Lab" ]
