@@ -3,7 +3,7 @@ open System.Reflection
 
 [<assembly: AssemblyTitleAttribute("Angara.Table")>]
 [<assembly: AssemblyProductAttribute("Angara.Table")>]
-[<assembly: AssemblyDescriptionAttribute("A .NET library to work with table data type.")>]
+[<assembly: AssemblyDescriptionAttribute("A .NET library to work with plain tables.")>]
 [<assembly: AssemblyVersionAttribute("0.2.0")>]
 [<assembly: AssemblyFileVersionAttribute("0.2.0")>]
 do ()
