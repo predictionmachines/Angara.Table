@@ -336,7 +336,7 @@ Target "ReleaseDocs" (fun _ ->
 open Octokit
 open Fake.NpmHelper
 
-Target "Release" (fun _ ->
+let getGitInfo() = 
     let user =
         match getBuildParam "github-user" with
         | s when not (String.IsNullOrWhiteSpace s) -> s
@@ -350,6 +350,10 @@ Target "Release" (fun _ ->
         |> Seq.filter (fun (s: string) -> s.EndsWith("(push)"))
         |> Seq.tryFind (fun (s: string) -> s.Contains(gitOwner + "/" + gitName))
         |> function None -> gitHome + "/" + gitName | Some (s: string) -> s.Split().[0]
+    user, pw, remote
+
+Target "Release" (fun _ ->
+    let user, pw, remote = getGitInfo()
 
     StageAll ""
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
@@ -364,6 +368,28 @@ Target "Release" (fun _ ->
     // TODO: |> uploadFile "PATH_TO_FILE"
     |> releaseDraft
     |> Async.RunSynchronously
+)
+
+Target "ReleaseWithBower" (fun _ ->
+    //let user, pw, remote = getGitInfo()
+
+    StageAll ""
+    Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
+    Branches.checkoutNewBranch "" "master" "release"
+    CommandHelper.runGitCommand "" "add -f dist" |> ignore
+    
+    
+    //Branches.pushBranch "" remote (Information.getBranchName "")
+
+    // Branches.tag "" release.NugetVersion
+    // Branches.pushTag "" remote release.NugetVersion
+
+    // // release on github
+    // createClient user pw
+    // |> createDraft gitOwner gitName release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
+    // // TODO: |> uploadFile "PATH_TO_FILE"
+    // |> releaseDraft
+    // |> Async.RunSynchronously
 )
 
 Target "Npm" (fun _ ->
