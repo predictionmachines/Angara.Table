@@ -460,5 +460,8 @@ Target "All" DoNothing
 "BuildPackage"
   ==> "PublishNuget"
   ==> "Release"
+  
+"BuildPackage"
+  ==> "ReleaseWithBower"
 
 RunTargetOrDefault "All"
