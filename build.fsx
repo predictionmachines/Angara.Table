@@ -375,6 +375,11 @@ Target "ReleaseWithBower" (fun _ ->
 
     let b = Information.getBranchName ""
     let br = sprintf "release_%s" release.NugetVersion
+    
+    // Changing versions in bower files
+    let version = sprintf @"""version"": ""%s""" release.NugetVersion
+    [ "bower.json"; "package.json" ]
+    |> Seq.iter (ReplaceInFile (@"""version""\s*:\s*""\d+\.\d+\.\d+""" >=> version))
 
     StageAll ""
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)    
@@ -460,6 +465,9 @@ Target "All" DoNothing
 "BuildPackage"
   ==> "PublishNuget"
   ==> "Release"
+  
+"ReleaseDocs"
+  ==> "ReleaseWithBower"  
   
 "BuildPackage"
   ==> "ReleaseWithBower"

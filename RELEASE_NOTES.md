@@ -1,7 +1,6 @@
-### 0.2.0 - April 15, 2016
+### 0.2.1 - April 18, 2016
 
 * Target framework is .Net 4.5.2
-
 
 #### 0.1.1 - March 24, 2016
 
