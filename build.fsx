@@ -374,7 +374,7 @@ Target "ReleaseWithBower" (fun _ ->
     let user, pw, remote = getGitInfo()
 
     let b = Information.getBranchName ""
-    let br = sprintf "release %s" release.NugetVersion
+    let br = sprintf "release_%s" release.NugetVersion
 
     StageAll ""
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)    
