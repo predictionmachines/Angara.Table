@@ -384,7 +384,7 @@ Target "ReleaseWithBower" (fun _ ->
     Git.Commit.Commit "" (sprintf "Release %s" release.NugetVersion)
     Branches.tag "" release.NugetVersion
     Branches.checkoutBranch "" b
-    Branches.deleteBranch "" false br
+    Branches.deleteBranch "" true br
     Branches.pushBranch "" remote b
     Branches.pushTag "" remote release.NugetVersion
 
