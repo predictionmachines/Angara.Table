@@ -371,25 +371,29 @@ Target "Release" (fun _ ->
 )
 
 Target "ReleaseWithBower" (fun _ ->
-    //let user, pw, remote = getGitInfo()
+    let user, pw, remote = getGitInfo()
+
+    let b = Information.getBranchName ""
+    let br = sprintf "release %s" release.NugetVersion
 
     StageAll ""
-    Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
-    Branches.checkoutNewBranch "" "master" "release"
-    CommandHelper.runGitCommand "" "add -f dist" |> ignore
-    
-    
-    //Branches.pushBranch "" remote (Information.getBranchName "")
+    Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)    
+    Branches.checkoutNewBranch "" b br
+    let ok,_,errors = CommandHelper.runGitCommand "" "add -f dist" 
+    if not ok then failwithf "git add -f dist failed %s" errors
+    Git.Commit.Commit "" (sprintf "Release %s" release.NugetVersion)
+    Branches.tag "" release.NugetVersion
+    Branches.checkoutBranch "" b
+    Branches.deleteBranch "" false br
+    Branches.pushBranch "" remote b
+    Branches.pushTag "" remote release.NugetVersion
 
-    // Branches.tag "" release.NugetVersion
-    // Branches.pushTag "" remote release.NugetVersion
-
-    // // release on github
-    // createClient user pw
-    // |> createDraft gitOwner gitName release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
+    // release on github
+    createClient user pw
+    |> createDraft gitOwner gitName release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
     // // TODO: |> uploadFile "PATH_TO_FILE"
-    // |> releaseDraft
-    // |> Async.RunSynchronously
+    |> releaseDraft
+    |> Async.RunSynchronously
 )
 
 Target "Npm" (fun _ ->
