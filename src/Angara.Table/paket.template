@@ -6,11 +6,11 @@ owners
 authors 
     Microsoft Research; MSU ITIS Lab 
 projectUrl
-    http://github.com/Microsoft/Angara.Table
+    http://github.com/predictionmachines/Angara.Table
 iconUrl
-    https://raw.githubusercontent.com/Microsoft/Angara.Table/master/docs/files/img/logo.png
+    https://raw.githubusercontent.com/predictionmachines/Angara.Table/master/docs/files/img/logo.png
 licenseUrl
-    http://github.com/Microsoft/Angara.Table/blob/master/LICENSE.txt
+    http://github.com/predictionmachines/Angara.Table/blob/master/LICENSE.txt
 requireLicenseAcceptance
     false
 copyright
@@ -18,8 +18,6 @@ copyright
 tags
     table csv .net f#
 summary
-    A .NET library to work with tables.
+    A .NET library to work with plain tables.
 description
-    Angara.Table is a .NET library that provides types representing plain tables. It allows loading and saving tables and facilitates operations on tables.
-
-
+    Angara.Table is a .NET library that provides types representing plain tables. It allows loading and saving tables using text delimited formats (CSV) and facilitates operations on tables.
