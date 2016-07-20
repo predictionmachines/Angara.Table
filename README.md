@@ -3,11 +3,6 @@ Angara.Table is a .NET library that contains types for table representation and 
 
 This repository also contains HTML5/JavaScript user control to visualize tables.
 
-## Build Status
- 
-Mono | .NET
----- | ----
-[![Mono CI Build Status](https://img.shields.io/travis/predictionmachines/Angara.Table/master.svg)](https://travis-ci.org/predictionmachines/Angara.Table) | [![.NET Build Status](https://img.shields.io/appveyor/ci/dvoits/angara-table/master.svg)](https://ci.appveyor.com/project/dvoits/angara-table)
- 
+## Documentation
 
-
+http://predictionmachines.github.io/Angara.Table/ 

@@ -1,4 +1,9 @@
-### 0.2.1 - April 18, 2016
+## 0.2.2 - July 20, 2016
+
+* Uses IDD version 1.3.0
+* Fixes bug when summary tile showed text below chart.
+
+#### 0.2.1 - April 18, 2016
 
 * Target framework is .Net 4.5.2
 
