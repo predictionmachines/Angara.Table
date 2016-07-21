@@ -1,4 +1,8 @@
-## 0.2.2 - July 20, 2016
+## 0.2.3 - July 21, 2016
+
+* Uses IDD 1.4.x
+
+#### 0.2.2 - July 20, 2016
 
 * Uses IDD version 1.3.0
 * Fixes bug when summary tile showed text below chart.
