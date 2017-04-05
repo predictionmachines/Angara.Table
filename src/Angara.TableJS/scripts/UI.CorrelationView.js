@@ -126,18 +126,19 @@
                                     
                                 for (var i = 0; i < n; i++) {
                                     var colName = TableViewer.MathUtils.escapeHtml(result.c[i]);
-                                    labels[i] = "<div class='vert-axis-item' title='" + colName + "'>" + colName + "</div>";
-                                    labelsHor[i] = "<div class='horz-axis-item-container'><div class='horz-axis-item' title='" + colName + "'>" + colName + "</div></div>";
+                                    labels[i] = colName;
+                                    labelsHor[i] = colName;
                                 }
 
                                 if (axisLeft) axisLeft.axis.remove();
                                 axisLeft = figure.addAxis("left", "labels",
                                     { labels: labels, ticks: x, rotate: false });
-
                                 if (axisTop) axisTop.axis.remove();
                                 axisTop = figure.addAxis("top", "labels",
                                     { labels: labelsHor, ticks: x, rotate: false });
-
+				axisLeft.axis.FontSize = 14;
+				axisTop.axis.FontSize = 14;
+				figure.updateLayout();
                                 var grid = figure.get("grid");
                                 grid.xAxis = axisTop.axis;
                                 grid.yAxis = axisLeft.axis;
