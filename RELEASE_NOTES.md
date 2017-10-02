@@ -1,4 +1,8 @@
-## 0.2.4 - April 5, 2017
+## 0.2.5 - October 2, 2017
+
+* Improved performance of Table.Load
+
+#### 0.2.4 - April 5, 2017
 
 * Uses IDD 1.5.x
 
