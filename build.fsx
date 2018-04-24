@@ -370,7 +370,7 @@ Target "Release" (fun _ ->
     |> Async.RunSynchronously
 )
 
-Target "ReleaseWithBower" (fun _ ->
+Target "ReleaseOnGitHub" (fun _ ->
     let user, pw, remote = getGitInfo()
 
     let b = Information.getBranchName ""
@@ -378,7 +378,7 @@ Target "ReleaseWithBower" (fun _ ->
     
     // Changing versions in bower files
     let version = sprintf @"""version"": ""%s""" release.NugetVersion
-    [ "bower.json"; "package.json" ]
+    [ "package.json" ]
     |> Seq.iter (ReplaceInFile (@"""version""\s*:\s*""\d+\.\d+\.\d+""" >=> version))
 
     StageAll ""
@@ -467,10 +467,10 @@ Target "All" DoNothing
   ==> "Release"
   
 "ReleaseDocs"
-  ==> "ReleaseWithBower"  
+  ==> "ReleaseOnGitHub"  
   
 "BuildPackage"
   ==> "PublishNuget"
-  ==> "ReleaseWithBower"
+  ==> "ReleaseOnGitHub"
 
 RunTargetOrDefault "All"
