@@ -136,9 +136,9 @@
                                 if (axisTop) axisTop.axis.remove();
                                 axisTop = figure.addAxis("top", "labels",
                                     { labels: labelsHor, ticks: x, rotate: false });
-				axisLeft.axis.FontSize = 14;
-				axisTop.axis.FontSize = 14;
-				figure.updateLayout();
+                                axisLeft.axis.FontSize = 14;
+                                axisTop.axis.FontSize = 14;
+                                figure.updateLayout();
                                 var grid = figure.get("grid");
                                 grid.xAxis = axisTop.axis;
                                 grid.yAxis = axisLeft.axis;

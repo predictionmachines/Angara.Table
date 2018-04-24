@@ -1,4 +1,10 @@
-## 0.2.5 - October 2, 2017
+## 0.3.0 - April 24, 2018
+
+* Uses IDD 1.5.3
+* Allows to choose a default tab for Table.JS.
+* Bower Away
+
+#### 0.2.5 - October 2, 2017
 
 * Improved performance of Table.Load
 
