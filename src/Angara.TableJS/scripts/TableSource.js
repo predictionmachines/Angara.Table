@@ -17,7 +17,7 @@
     TableSource.prototype.getDataAsync = function (startRow, rows) {
         var p = $.Deferred();
         var slices = this.dataByCols.map(function (col) {
-            return Array.prototype.slice.apply(col, [startRow, startRow + rows - 1]);
+            return Array.prototype.slice.apply(col, [startRow, startRow + rows]);
         });
         p.resolve(slices);
         return p.promise();
