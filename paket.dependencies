@@ -1,11 +1,11 @@
 source https://nuget.org/api/v2
-nuget Angara.Serialization ~> 0.2.0
+nuget Angara.Serialization ~> 0.3.0
 nuget Angara.Statistics ~> 0.1
 nuget System.Collections.Immutable 1.1.36
 
 group Build
   source https://nuget.org/api/v2
-nuget npm.js
+  nuget Yarnpkg.Yarn ~> 1.6.0
   nuget SourceLink.Fake
   nuget FAKE
   nuget FSharp.Formatting
@@ -14,10 +14,10 @@ nuget npm.js
 
 group Test
   source https://nuget.org/api/v2  
-  nuget Angara.Serialization.Json ~> 0.2.0
+  nuget Angara.Serialization.Json ~> 0.3.0
   nuget FsCheck
   nuget FsCheck.NUnit
   nuget FsUnit
-  nuget Newtonsoft.Json >= 8.0.3
-  nuget NUnit ~> 2
-  nuget NUnit.Runners ~> 2
+  nuget Newtonsoft.Json >= 10.0.1
+  nuget NUnit 2.6.4
+  nuget NUnit.Runners 2.6.4

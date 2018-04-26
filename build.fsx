@@ -334,7 +334,7 @@ Target "ReleaseDocs" (fun _ ->
 
 #load "paket-files/build/fsharp/FAKE/modules/Octokit/Octokit.fsx"
 open Octokit
-open Fake.NpmHelper
+open Fake.YarnHelper
 
 let getGitInfo() = 
     let user =
@@ -401,12 +401,12 @@ Target "ReleaseOnGitHub" (fun _ ->
     |> Async.RunSynchronously
 )
 
-Target "Npm" (fun _ ->
-    Npm (fun p ->
+Target "Yarn" (fun _ ->
+    Yarn (fun p ->
             { p with
                 Command = Install Standard
                 WorkingDirectory = "./"
-                NpmFilePath = if isUnix then p.NpmFilePath else "./packages/build/Npm.js/tools/npm.cmd"
+                YarnFilePath = if isUnix then p.YarnFilePath else "./packages/build/Yarnpkg.Yarn/content/bin/yarn.cmd"
             })
 )
 
@@ -435,8 +435,8 @@ Target "All" DoNothing
   ==> "GenerateDocs"
   ==> "All"
   =?> ("ReleaseDocs",isLocalBuild)
-
-"Npm"
+  
+"Yarn"
   ==> "Grunt"
   ==> "All"
 
