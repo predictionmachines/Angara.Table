@@ -39,7 +39,7 @@ in accordance with <a href="https://tools.ietf.org/html/rfc4180">RFC 4180</a> bu
 <p>The <code>Table.Save</code> function saves a table to a file or using given <code>TextWriter</code>:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span onmouseout="hideTip(event, 'fs7', 10)" onmouseover="showTip(event, 'fs7', 10)" class="t">Table</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="f">Save</span>(<span class="i">table</span>, <span class="s">&quot;table.csv&quot;</span>)
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">Table</span><span class="o">.</span><span class="i">Save</span>(<span class="i">table</span>, <span class="s">&quot;table.csv&quot;</span>)
 </code></pre></td>
 </tr>
 </table>
@@ -51,7 +51,7 @@ in accordance with <a href="https://tools.ietf.org/html/rfc4180">RFC 4180</a> bu
 <span class="l">5: </span>
 <span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">x</span>,<span onmouseout="hideTip(event, 'fs9', 12)" onmouseover="showTip(event, 'fs9', 12)" class="f">sin</span>(<span class="i">x</span>)
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="i">x</span>,<span class="i">sin</span>(<span class="i">x</span>)
 <span class="n">0</span>,<span class="n">0</span>
 <span class="n">0.1</span>,<span class="n">0.099833416646828155</span>
 <span class="n">0.2</span>,<span class="n">0.19866933079506122</span>
@@ -64,7 +64,7 @@ in accordance with <a href="https://tools.ietf.org/html/rfc4180">RFC 4180</a> bu
 <code>Table.Load</code> function:</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs10', 13)" onmouseover="showTip(event, 'fs10', 13)" class="i">table</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs7', 14)" onmouseover="showTip(event, 'fs7', 14)" class="t">Table</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 15)" onmouseover="showTip(event, 'fs11', 15)" class="f">Load</span> <span class="s">&quot;table.csv&quot;</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span class="i">table</span> <span class="o">=</span> <span class="i">Table</span><span class="o">.</span><span class="i">Load</span> <span class="s">&quot;table.csv&quot;</span>
 </code></pre></td>
 </tr>
 </table>
@@ -82,11 +82,11 @@ and never as <code>int</code> to avoid ambiguity. If you need an integer column,
 <span class="l">4: </span>
 <span class="l">5: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span onmouseout="hideTip(event, 'fs12', 16)" onmouseover="showTip(event, 'fs12', 16)" class="t">SinX</span> <span class="o">=</span> { <span onmouseout="hideTip(event, 'fs13', 17)" onmouseover="showTip(event, 'fs13', 17)" class="i">x</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs14', 18)" onmouseover="showTip(event, 'fs14', 18)" class="t">float</span>; <span class="i">``sin(x)``</span><span class="o">:</span> <span onmouseout="hideTip(event, 'fs14', 19)" onmouseover="showTip(event, 'fs14', 19)" class="t">float</span> }
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">type</span> <span class="i">SinX</span> <span class="o">=</span> { <span class="i">x</span><span class="o">:</span> <span class="i">float</span>; <span class="i">``sin(x)``</span><span class="o">:</span> <span class="i">float</span> }
 
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs15', 20)" onmouseover="showTip(event, 'fs15', 20)" class="i">tableSinX</span> <span class="o">:</span> <span onmouseout="hideTip(event, 'fs7', 21)" onmouseover="showTip(event, 'fs7', 21)" class="t">Table</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs12', 22)" onmouseover="showTip(event, 'fs12', 22)" class="t">SinX</span><span class="o">&gt;</span> <span class="o">=</span> 
-    (<span onmouseout="hideTip(event, 'fs7', 23)" onmouseover="showTip(event, 'fs7', 23)" class="t">Table</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 24)" onmouseover="showTip(event, 'fs11', 24)" class="f">Load</span> <span class="s">&quot;table.csv&quot;</span>)<span class="o">.</span><span class="f">ToRows</span><span class="o">&lt;</span><span onmouseout="hideTip(event, 'fs12', 25)" onmouseover="showTip(event, 'fs12', 25)" class="t">SinX</span><span class="o">&gt;</span>()
-    <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs7', 26)" onmouseover="showTip(event, 'fs7', 26)" class="t">Table</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs16', 27)" onmouseover="showTip(event, 'fs16', 27)" class="f">OfRows</span>
+<span class="k">let</span> <span class="i">tableSinX</span> <span class="o">:</span> <span class="i">Table</span><span class="o">&lt;</span><span class="i">SinX</span><span class="o">&gt;</span> <span class="o">=</span> 
+    (<span class="i">Table</span><span class="o">.</span><span class="i">Load</span> <span class="s">&quot;table.csv&quot;</span>)<span class="o">.</span><span class="i">ToRows</span><span class="o">&lt;</span><span class="i">SinX</span><span class="o">&gt;</span>()
+    <span class="o">|&gt;</span> <span class="i">Table</span><span class="o">.</span><span class="i">OfRows</span>
 </code></pre></td>
 </tr>
 </table>
@@ -98,22 +98,6 @@ it saves a null string as an empty string and an empty string as two double quot
 The default <code>Load</code> both empty string and two double quotes reads as an empty string;
 if custom <code>ReadSettings</code> has <code>InferNullStrings</code> set to true, double quotes ("") are considered as empty string and an empty string is considered as null.</p>
 
-<div class="tip" id="fs1">namespace Angara</div>
-<div class="tip" id="fs2">namespace Angara.Data</div>
-<div class="tip" id="fs3">namespace System</div>
-<div class="tip" id="fs4">namespace System.Collections</div>
-<div class="tip" id="fs5">namespace System.Collections.Generic</div>
-<div class="tip" id="fs6">namespace System.Collections.Immutable</div>
-<div class="tip" id="fs7">Multiple items<br />type Table =<br />&#160;&#160;interface IEnumerable&lt;Column&gt;<br />&#160;&#160;abstract member ToRows : unit -&gt; seq&lt;&#39;r&gt;<br />&#160;&#160;member Count : int<br />&#160;&#160;member Item : name:string -&gt; Column with get<br />&#160;&#160;member Item : index:int -&gt; Column with get<br />&#160;&#160;member RowsCount : int<br />&#160;&#160;member TryItem : name:string -&gt; Column option with get<br />&#160;&#160;member TryItem : index:int -&gt; Column option with get<br />&#160;&#160;static member Add : column:Column -&gt; table:Table -&gt; Table<br />&#160;&#160;static member Append : table1:Table -&gt; table2:Table -&gt; Table<br />&#160;&#160;...<br /><br />Full name: Angara.Data.Table<br /><br />--------------------<br />type Table&lt;&#39;r&gt; =<br />&#160;&#160;inherit Table<br />&#160;&#160;member AddRow : &#39;r -&gt; Table&lt;&#39;r&gt;<br />&#160;&#160;member AddRows : seq&lt;&#39;r&gt; -&gt; Table&lt;&#39;r&gt;<br />&#160;&#160;member Rows : ImmutableArray&lt;&#39;r&gt;<br /><br />Full name: Angara.Data.Table&lt;_&gt;</div>
-<div class="tip" id="fs8">static member Table.Save : table:Table * writer:IO.TextWriter -&gt; unit<br />static member Table.Save : table:Table * path:string -&gt; unit<br />static member Table.Save : table:Table * writer:IO.TextWriter * settings:DelimitedFile.WriteSettings -&gt; unit<br />static member Table.Save : table:Table * path:string * settings:DelimitedFile.WriteSettings -&gt; unit</div>
-<div class="tip" id="fs9">val sin : value:&#39;T -&gt; &#39;T (requires member Sin)<br /><br />Full name: Microsoft.FSharp.Core.Operators.sin</div>
-<div class="tip" id="fs10">val table : Table<br /><br />Full name: Saveload.table</div>
-<div class="tip" id="fs11">static member Table.Load : reader:IO.TextReader -&gt; Table<br />static member Table.Load : path:string -&gt; Table<br />static member Table.Load : reader:IO.TextReader * settings:DelimitedFile.ReadSettings -&gt; Table<br />static member Table.Load : path:string * settings:DelimitedFile.ReadSettings -&gt; Table</div>
-<div class="tip" id="fs12">type SinX =<br />&#160;&#160;{x: float;<br />&#160;&#160;&#160;sin(x): float;}<br /><br />Full name: Saveload.SinX</div>
-<div class="tip" id="fs13">SinX.x: float</div>
-<div class="tip" id="fs14">Multiple items<br />val float : value:&#39;T -&gt; float (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.float<br /><br />--------------------<br />type float = Double<br /><br />Full name: Microsoft.FSharp.Core.float<br /><br />--------------------<br />type float&lt;&#39;Measure&gt; = float<br /><br />Full name: Microsoft.FSharp.Core.float&lt;_&gt;</div>
-<div class="tip" id="fs15">val tableSinX : Table&lt;SinX&gt;<br /><br />Full name: Saveload.tableSinX</div>
-<div class="tip" id="fs16">static member Table.OfRows : Collections.Immutable.ImmutableArray&lt;&#39;r&gt; -&gt; Table&lt;&#39;r&gt;<br />static member Table.OfRows : seq&lt;&#39;r&gt; -&gt; Table&lt;&#39;r&gt;</div>
 
         </div>
         <div class="span3">
