@@ -13,6 +13,7 @@
         this.correlation = tableDescription.correlation;
         this.onChanged = undefined;
         this.metadata = {};
+        this.viewSettings = tableDescription.viewSettings;
     }
     TableSource.prototype.getDataAsync = function (startRow, rows) {
         var p = $.Deferred();

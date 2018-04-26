@@ -1,6 +1,10 @@
 ﻿(function (TableViewer, $) {
-    TableViewer.show = function (htmlElement /*HTMLElement*/, content /*TableSource or TableDescription*/, initialView /* "summary" (default), "data", "correlation" */) {
+    TableViewer.show = function (htmlElement /*HTMLElement*/, content /*TableSource or TableDescription*/) {
         var tableSource;
+        if (!content.viewSettings)
+            content.viewSettings = { defaultTab: "summary", defaultPageSize: 10, hideNaNs: false };
+            //default settings if none present
+        var initialView = content.viewSettings.defaultTab;
         if(typeof content["getDataAsync"] !== "undefined") // TableSource
             tableSource = content;
         else // TableDescription
