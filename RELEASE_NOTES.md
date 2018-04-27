@@ -1,3 +1,7 @@
+## 0.3.2 - April 27, 2018
+
+* Added custom formatters for column values to TableView
+
 ## 0.3.1 - April 26, 2018
 
 * Added TableView which encompasses a Table and some settings for table viewer
