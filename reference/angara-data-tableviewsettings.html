@@ -51,9 +51,27 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '120', 120)" onmouseover="showTip(event, '120', 120)">
-            DefaultPageSize
+            CustomFormatters
           </code>
           <div class="tip" id="120">
+            <strong>Signature:</strong> Map&lt;string,string&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/Microsoft/Angara.Table/tree/master/src/Angara.Table/TableView.fs#L18-18" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '121', 121)" onmouseover="showTip(event, '121', 121)">
+            DefaultPageSize
+          </code>
+          <div class="tip" id="121">
             <strong>Signature:</strong> PageSize<br />
                       </div>
         </td>
@@ -68,10 +86,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '121', 121)" onmouseover="showTip(event, '121', 121)">
+          <code onmouseout="hideTip(event, '122', 122)" onmouseover="showTip(event, '122', 122)">
             DefaultTab
           </code>
-          <div class="tip" id="121">
+          <div class="tip" id="122">
             <strong>Signature:</strong> TableViewerTab<br />
                       </div>
         </td>
@@ -86,10 +104,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '122', 122)" onmouseover="showTip(event, '122', 122)">
+          <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
             HideNaNs
           </code>
-          <div class="tip" id="122">
+          <div class="tip" id="123">
             <strong>Signature:</strong> bool<br />
                       </div>
         </td>
@@ -99,6 +117,60 @@
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Static members</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Static member</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
+            Create(...)
+          </code>
+          <div class="tip" id="124">
+            <strong>Signature:</strong> (defaultTab:TableViewerTab * defaultPageSize:PageSize * hideNaNs:bool * customFormatters:IDictionary&lt;string,string&gt;) -&gt; TableViewSettings<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/Microsoft/Angara.Table/tree/master/src/Angara.Table/TableView.fs#L31-31" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Create TableViewSettings.
+customFormatters if an IDictionary<string, string> where keys are names of corresponding table columns
+and values are bodies of javascript functions x -&gt; string performing the desired formatting
+e.g. "return x.toFixed(2);" Note, that the name of the formal parameter passed into this function is always "x"</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
+            Create(...)
+          </code>
+          <div class="tip" id="125">
+            <strong>Signature:</strong> (defaultTab:TableViewerTab * defaultPageSize:PageSize * hideNaNs:bool * customFormatters:Map&lt;string,string&gt; option) -&gt; TableViewSettings<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/Microsoft/Angara.Table/tree/master/src/Angara.Table/TableView.fs#L23-23" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Create TableViewSettings.
+customFormatters if a Map<string, string> where keys are names of corresponding table columns
+and values are bodies of javascript functions x -&gt; string performing the desired formatting
+e.g. "return x.toFixed(2);" Note, that the name of the formal parameter passed into this function is always "x"</p>
+
+
         </td>
       </tr>
     </tbody>
