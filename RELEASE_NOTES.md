@@ -1,12 +1,16 @@
-## 0.3.2 - April 27, 2018
+## 0.3.3 - April 28, 2018
+
+* Bug fixes
+
+#### 0.3.2 - April 27, 2018
 
 * Added custom formatters for column values to TableView
 
-## 0.3.1 - April 26, 2018
+#### 0.3.1 - April 26, 2018
 
 * Added TableView which encompasses a Table and some settings for table viewer
 
-## 0.3.0 - April 24, 2018
+#### 0.3.0 - April 24, 2018
 
 * Uses IDD 1.5.3
 * Allows to choose a default tab for Table.JS.
