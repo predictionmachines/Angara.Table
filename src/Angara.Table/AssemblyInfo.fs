@@ -5,13 +5,13 @@ open System.Reflection
 [<assembly: AssemblyTitleAttribute("Angara.Table")>]
 [<assembly: AssemblyProductAttribute("Angara.Table")>]
 [<assembly: AssemblyDescriptionAttribute("A .NET library to work with plain tables.")>]
-[<assembly: AssemblyVersionAttribute("0.3.3")>]
-[<assembly: AssemblyFileVersionAttribute("0.3.3")>]
+[<assembly: AssemblyVersionAttribute("0.3.4")>]
+[<assembly: AssemblyFileVersionAttribute("0.3.4")>]
 do ()
 
 module internal AssemblyVersionInformation =
     let [<Literal>] AssemblyTitle = "Angara.Table"
     let [<Literal>] AssemblyProduct = "Angara.Table"
     let [<Literal>] AssemblyDescription = "A .NET library to work with plain tables."
-    let [<Literal>] AssemblyVersion = "0.3.3"
-    let [<Literal>] AssemblyFileVersion = "0.3.3"
+    let [<Literal>] AssemblyVersion = "0.3.4"
+    let [<Literal>] AssemblyFileVersion = "0.3.4"

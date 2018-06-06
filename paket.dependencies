@@ -1,7 +1,7 @@
 source https://nuget.org/api/v2
 nuget Angara.Serialization ~> 0.3.0
 nuget Angara.Statistics ~> 0.1
-nuget System.Collections.Immutable 1.1.36
+nuget System.Collections.Immutable >= 1.1.36
 
 group Build
   source https://nuget.org/api/v2

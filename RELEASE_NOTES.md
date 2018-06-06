@@ -1,4 +1,8 @@
-## 0.3.3 - April 28, 2018
+## 0.3.4 - June 06, 2018
+
+* Relaxes dependency on System.Collections.Immutable, so now it requires at least 1.1.36.
+
+#### 0.3.3 - April 28, 2018
 
 * Bug fixes
 
